@@ -4,6 +4,7 @@
     <h1>My Cart</h1>
   </header>
 
+  <% if enhanced_cart.present?%>
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -45,6 +46,12 @@
           data-email="kvirani@gmail.com"
           data-currency="cad">
         </script>
+      <% end %>
+      <% else %>
+      <div class = "alert alert-danger">
+      <p>Oh no! Looks like your cart is empty. </p>
+      <%= link_to "Continue shopping", "/" %> 
+      </div>
       <% end %>
     </div>
   </div>
